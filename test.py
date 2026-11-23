@@ -1,14 +1,8 @@
-from tools.tavily_tool import tavily_search
-from tools.flight_tool import search_flights
-from rich import print
-from backend import run_travel_agent
+import asyncio
+from mcp_client_test import tavily_mcp_search
+from mcp_client import initialize_aviation_tools
 
+if __name__ == "__main__":
+    query = 'Latest news about AI layoffs'
+    asyncio.run(initialize_aviation_tools())
 
-
-# res = tavily_search("Best hotels in India")
-
-# res = search_flights("Plan a 7 days Japan trip from Bangladesh")
-
-res = run_travel_agent("Plan a complete 7 days India trip from Bangladesh including flights, hotels, and sightseeing under 2 lakhs.")
-
-print(res)
