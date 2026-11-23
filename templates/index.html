@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#102c35" />
+
+    <meta
+      name="description"
+      content="WayFarer AI - Your intelligent travel companion. Plan smarter journeys with AI-powered travel recommendations."
+    />
+
+    <title>WayFarer AI — Explore Further</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="/static/style.css" />
+
+    <!-- Markdown Parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <!-- HTML Sanitizer -->
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.3.1/dist/purify.min.js"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Application JavaScript -->
+    <script src="{{ url_for('static', path='js/script.js') }}"></script>
+  </head>
+
+  <body>
+    <div class="app-shell">
+      <!-- Sidebar -->
+      <aside class="sidebar" id="sidebar">
+        <a href="/" class="brand">
+          <div class="brand-icon">
+            <i data-lucide="compass"></i>
+          </div>
+
+          <div>
+            <span class="brand-name">WayFarer<span> AI</span></span>
+            <span class="brand-caption">TRAVEL INTELLIGENCE</span>
+          </div>
+        </a>
+
+        <div class="sidebar-section">
+          <p class="sidebar-label">WORKSPACE</p>
+
+          <button class="nav-item active" id="newTripBtn">
+            <i data-lucide="plus"></i>
+            <span>New journey</span>
+          </button>
+
+          <button class="nav-item" id="exploreBtn">
+            <i data-lucide="compass"></i>
+            <span>Explore destinations</span>
+          </button>
+        </div>
+
+        <div class="sidebar-section">
+          <p class="sidebar-label">YOUR EXPERIENCE</p>
+
+          <div class="sidebar-info">
+            <div class="info-icon">
+              <i data-lucide="plane"></i>
+            </div>
+            <div>
+              <strong>Flight discovery</strong>
+              <span>Find your best route</span>
+            </div>
+          </div>
+
+          <div class="sidebar-info">
+            <div class="info-icon">
+              <i data-lucide="hotel"></i>
+            </div>
+            <div>
+              <strong>Stay recommendations</strong>
+              <span>Discover places to stay</span>
+            </div>
+          </div>
+
+          <div class="sidebar-info">
+            <div class="info-icon">
+              <i data-lucide="calendar-days"></i>
+            </div>
+            <div>
+              <strong>Smart itineraries</strong>
+              <span>Every day, thoughtfully planned</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-bottom">
+          <div class="sidebar-promo">
+            <i data-lucide="sparkles"></i>
+            <p>Every great journey starts with an idea.</p>
+            <span>Let AI help you discover what's possible.</span>
+          </div>
+
+          <div class="profile">
+            <div class="profile-avatar">W</div>
+            <div>
+              <strong>WayFarer Explorer</strong>
+              <span>Your travel workspace</span>
+            </div>
+            <i data-lucide="settings" class="profile-settings"></i>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main -->
+      <main class="main-content">
+        <header class="topbar">
+          <button class="mobile-menu" id="menuBtn" aria-label="Open navigation">
+            <i data-lucide="menu"></i>
+          </button>
+
+          <div class="breadcrumb">
+            <span>Workspace</span>
+            <i data-lucide="chevron-right"></i>
+            <strong>Travel planner</strong>
+          </div>
+
+          <div class="topbar-right">
+            <div class="status-indicator">
+              <span></span>
+              AI Assistant
+            </div>
+
+            <div class="topbar-avatar">W</div>
+          </div>
+        </header>
+
+        <div class="page-container">
+          <!-- Hero -->
+          <section class="hero-section" id="heroSection">
+            <div class="hero-content">
+              <div class="eyebrow">
+                <i data-lucide="sparkles"></i>
+                YOUR PERSONAL AI TRAVEL PARTNER
+              </div>
+
+              <h1>
+                The world is waiting.<br />
+                <span>Where to next?</span>
+              </h1>
+
+              <p class="hero-description">
+                From hidden gems to unforgettable adventures, let intelligent
+                planning turn your travel dreams into beautifully crafted
+                journeys.
+              </p>
+
+              <div class="hero-features">
+                <span><i data-lucide="check"></i> Smart flight discovery</span>
+                <span><i data-lucide="check"></i> Curated stays</span>
+                <span
+                  ><i data-lucide="check"></i> Personalized itineraries</span
+                >
+              </div>
+            </div>
+
+            <div class="hero-image">
+              <img
+                src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&q=85"
+                alt="Beautiful mountain lake travel destination"
+              />
+              <div class="image-overlay"></div>
+
+              <div class="image-caption">
+                <span>THE BEAUTY OF DISCOVERY</span>
+                <strong>Somewhere beyond the ordinary.</strong>
+              </div>
+
+              <div class="floating-badge">
+                <i data-lucide="globe"></i>
+                <div>
+                  <strong>Explore freely</strong>
+                  <span>Your journey, your way.</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Travel Planner -->
+          <section class="planner-section" id="planner">
+            <div class="section-heading">
+              <div>
+                <span class="section-eyebrow"
+                  >LET'S PLAN SOMETHING AMAZING</span
+                >
+                <h2>Your next adventure starts here.</h2>
+                <p>Tell us what you have in mind. We'll handle the planning.</p>
+              </div>
+
+              <div class="ai-badge">
+                <i data-lucide="sparkles"></i>
+                Powered by AI
+              </div>
+            </div>
+
+            <div class="planner-card">
+              <div class="planner-top">
+                <div class="assistant-avatar">
+                  <i data-lucide="compass"></i>
+                </div>
+
+                <div>
+                  <strong>Your travel companion</strong>
+                  <span>Ready to create your next journey</span>
+                </div>
+
+                <span class="online-dot"></span>
+              </div>
+
+              <div class="suggestion-area" id="suggestionArea">
+                <p class="suggestion-label">NEED SOME INSPIRATION?</p>
+
+                <div class="suggestion-chips">
+                  <button
+                    class="suggestion-chip"
+                    data-prompt="Plan a 5-day trip to Bali with beaches, cultural experiences and a moderate budget."
+                  >
+                    <span>🏝️</span> Tropical escape
+                  </button>
+
+                  <button
+                    class="suggestion-chip"
+                    data-prompt="Plan a 7-day trip to Japan with cultural experiences, food and sightseeing."
+                  >
+                    <span>🏯</span> Cultural adventure
+                  </button>
+
+                  <button
+                    class="suggestion-chip"
+                    data-prompt="Plan a romantic 4-day getaway in Europe."
+                  >
+                    <span>❤️</span> Romantic getaway
+                  </button>
+
+                  <button
+                    class="suggestion-chip"
+                    data-prompt="Suggest a budget-friendly 3-day nature adventure."
+                  >
+                    <span>🌿</span> Nature retreat
+                  </button>
+                </div>
+              </div>
+
+              <form id="travelForm">
+                <label for="travelMessage" class="input-label">
+                  DESCRIBE YOUR DREAM JOURNEY
+                </label>
+
+                <div class="prompt-wrapper">
+                  <textarea
+                    id="travelMessage"
+                    name="message"
+                    rows="4"
+                    placeholder="e.g. I want to explore Switzerland for 7 days, experience the mountains, visit beautiful villages and find affordable hotels..."
+                    required
+                  ></textarea>
+
+                  <div class="prompt-footer">
+                    <span>
+                      <i data-lucide="lightbulb"></i>
+                      Be as detailed as you'd like.
+                    </span>
+
+                    <button type="submit" id="sendBtn">
+                      <span>Plan my journey</span>
+                      <i data-lucide="arrow-up-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </form>
+
+              <div class="privacy-note">
+                <i data-lucide="shield-check"></i>
+                Your journey is planned with AI-powered recommendations.
+              </div>
+            </div>
+          </section>
+
+          <!-- Loading -->
+          <section id="loadingSection" class="loading-section hidden">
+            <div class="loading-animation">
+              <i data-lucide="compass"></i>
+            </div>
+            <h3>Crafting your journey...</h3>
+            <p>Our AI travel team is researching your perfect adventure.</p>
+
+            <div class="loading-steps">
+              <span><i data-lucide="search"></i> Researching destinations</span>
+              <span><i data-lucide="plane"></i> Exploring flights</span>
+              <span><i data-lucide="hotel"></i> Finding accommodations</span>
+              <span
+                ><i data-lucide="calendar"></i> Building your itinerary</span
+              >
+            </div>
+          </section>
+
+          <!-- Error -->
+          <div id="errorSection" class="error-section hidden" role="alert">
+            <i data-lucide="alert-circle"></i>
+            <div>
+              <strong>Something went wrong</strong>
+              <p id="errorMessage"></p>
+            </div>
+            <button id="dismissError" aria-label="Dismiss error">
+              <i data-lucide="x"></i>
+            </button>
+          </div>
+
+          <!-- Results -->
+          <section id="resultsSection" class="results-section hidden">
+            <div class="results-header">
+              <div>
+                <span class="section-eyebrow">YOUR PERSONALIZED TRIP</span>
+                <h2>Your journey, beautifully planned.</h2>
+                <p>Here's what we've discovered for you.</p>
+              </div>
+
+              <button class="secondary-btn" id="newSearchBtn">
+                <i data-lucide="plus"></i>
+                New journey
+              </button>
+            </div>
+
+            <div class="result-summary" id="answerContainer"></div>
+
+            <div class="result-footer">
+              <i data-lucide="sparkles"></i>
+              Thoughtfully crafted by WayFarer AI
+            </div>
+          </section>
+
+          <footer class="page-footer">
+            <span>© 2026 WayFarer AI</span>
+            <span>Explore further. Travel smarter.</span>
+          </footer>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="/static/script.js"></script>
+  </body>
+</html>
